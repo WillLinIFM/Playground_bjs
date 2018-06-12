@@ -35,7 +35,7 @@ function teston(){
 }
 
 function testoff(){
-    if(scene.getMeshByID("armour")) ctestM.dispose(false,true);
+    if(scene.getMeshByID("armour")) {ctestM.dispose(false,true); clean(0);}
     
 }
     
