@@ -36,9 +36,9 @@ function updateshapekey(sa){
 
 function teston(){
     
-    $.getScript("avatar_anim.js",function(){
-    ctest = new avatar_anim.MeshFactory(scene);
-    ctestMI = ctest.instance("152QA_bone")
+    $.getScript("bone3.js",function(){
+    ctest = new bone3.MeshFactory(scene);
+    ctestMI = ctest.instance("gameavatar")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
     console.log(scene);
 //    var shapeKeyGroup = ctestMI.getShapeKeyGroup("ENTIRE_MESH");
@@ -77,7 +77,7 @@ function teston(){
 //        //passing_array(_i);
 //        ctestMI.addShapeKeyGroup(shapeKeyGroup);
 //        console.log(ctestMI._shapeKeyGroups);
-            scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
+//            scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
        
     })
 //    var uvs = scene.meshes[0].getVerticesData(BABYLON.VertexBuffer.UVKind);
