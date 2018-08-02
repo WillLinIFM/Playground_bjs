@@ -155,8 +155,8 @@ $.getScript("cloth_anim.js",function(){
 //    console.log(ctestM);
 //    var uvs = ctestM.getVerticesData()
     //scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
-    scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
-    scene.beginAnimation(scene.getSkeletonByName("FQBasis"), 0, 80, true, 0.8);
+//    scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
+//    scene.beginAnimation(scene.getSkeletonByName("FQBasis"), 0, 80, true, 0.8);
     
 })  
 }
