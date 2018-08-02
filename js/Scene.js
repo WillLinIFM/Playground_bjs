@@ -21,7 +21,7 @@
         alert("WebGL not supported in this browser.");
         }
 
-//        passing_array([1.234,2.345,3.456,4.456]);
+
 
 
 function updateshapekey(sa){
@@ -36,14 +36,14 @@ function updateshapekey(sa){
 
 function teston(){
     
-    $.getScript("bone3.js",function(){
-    ctest = new bone3.MeshFactory(scene);
-    ctestMI = ctest.instance("gameavatar")
+    $.getScript("avatar_anim.js",function(){
+    ctest = new avatar_anim.MeshFactory(scene);
+    ctestMI = ctest.instance("152QA_bone")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
     console.log(scene);
-//    var shapeKeyGroup = ctestMI.getShapeKeyGroup("ENTIRE_MESH");
-//     if(shapeKeyGroup) ctestMI.removeShapeKeyGroup("ENTIRE_MESH");
-//    $.getScript("avatar_anim_FQYDA.js",function(){
+    var shapeKeyGroup = ctestMI.getShapeKeyGroup("ENTIRE_MESH");
+     if(shapeKeyGroup) ctestMI.removeShapeKeyGroup("ENTIRE_MESH");
+    $.getScript("avatar_anim_FQYDA.js",function(){
         
 //        var texh = (scene.textures[scene.textures.length-1]._texture.baseHeight) * (scene.textures[scene.textures.length-1]._texture.baseWidth);
 ////        console.log(ctestMI.material._subMaterials[0]._diffuseTexture.readPixels());
@@ -72,12 +72,11 @@ function teston(){
         
 //        var _i_c = _i.subarray(C,_i.length);
 //        console.log(C);
-//        shapeKeyGroup._addShapeKey("FQYDA",true,_i);
-////        shapeKeyGroup._addShapeKey("FQYDA",true,_i_c);
-//        //passing_array(_i);
-//        ctestMI.addShapeKeyGroup(shapeKeyGroup);
-//        console.log(ctestMI._shapeKeyGroups);
-//            scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
+        shapeKeyGroup._addShapeKey("FQYDA",true,_i);
+//        shapeKeyGroup._addShapeKey("FQYDA",true,_i_c);
+        passing_array(_i);
+        ctestMI.addShapeKeyGroup(shapeKeyGroup);
+        console.log(ctestMI._shapeKeyGroups);
        
     })
 //    var uvs = scene.meshes[0].getVerticesData(BABYLON.VertexBuffer.UVKind);
@@ -96,50 +95,50 @@ function teston(){
 //    console.log(ctestM);
 //    var uvs = ctestM.getVerticesData()
     //scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 60, true, 0.8);
-//})   
+})   
 
-//
-//$.getScript("cloth_anim.js",function(){
-//    ctest2 = new cloth_anim.MeshFactory(scene);
-//    ctestMI2 = ctest2.instance("FQBasis")
-//    ctestMI2.position = new BABYLON.Vector3(0,50,20);
-//    console.log(scene);
-//    var shapeKeyGroup = ctestMI2.getShapeKeyGroup("ENTIRE_MESH");
-//     if(shapeKeyGroup) ctestMI2.removeShapeKeyGroup("ENTIRE_MESH");
-//    $.getScript("cloth_anim_FQYD.js",function(){
-//        
-////        var texh = (scene.textures[scene.textures.length-1]._texture.baseHeight) * (scene.textures[scene.textures.length-1]._texture.baseWidth);
-//////        console.log(ctestMI.material._subMaterials[0]._diffuseTexture.readPixels());
-////        console.log(scene.textures[0].getSize());
-////        console.log(scene.materials[0]._diffuseTexture);
-////        console.log(scene.materials[2]._diffuseTexture);
-////        console.log(scene.textures);
-//////        console.log(window.location.hostname.length);
-//        console.log(window);
-////        console.log(engine);
-////        console.log(new BABYLON.Texture(""));
-////        console.log(new BABYLON.NullEngine());
-////        var imageurl = document.createElement("input");
-////        imageurl.type = "file";
-////        console.log(imageurl.files.length);
-////        var fsize = imageurl.files[0].size; 
-////        console.log(fsize);
-////        console.log(scene.textures[0].readPixels());
-////        console.log(scene.textures[0].getTextureMatrix());
-////        console.log(scene.textures[0].getInternalTexture());
-//////        console.log(scene.textures[0].getSize())
-//////        console.log(scene.textures[0].getSize())
-//////        console.log(scene.textures[0].getSize())
-////        var C =  texh/511511;
-////                // could be hidden at any place!!
-//        
-//        //var _i_c = _i.subarray(C,_i.length);
-//        //console.log(C);
-//        shapeKeyGroup._addShapeKey("FQYDA",true,_i);
-//        ctestMI2.addShapeKeyGroup(shapeKeyGroup);
-//        console.log(ctestMI2._shapeKeyGroups);
-//       
-//    })
+
+$.getScript("cloth_anim.js",function(){
+    ctest2 = new cloth_anim.MeshFactory(scene);
+    ctestMI2 = ctest2.instance("FQBasis")
+    ctestMI2.position = new BABYLON.Vector3(0,50,20);
+    console.log(scene);
+    var shapeKeyGroup = ctestMI2.getShapeKeyGroup("ENTIRE_MESH");
+     if(shapeKeyGroup) ctestMI2.removeShapeKeyGroup("ENTIRE_MESH");
+    $.getScript("cloth_anim_FQYD.js",function(){
+        
+//        var texh = (scene.textures[scene.textures.length-1]._texture.baseHeight) * (scene.textures[scene.textures.length-1]._texture.baseWidth);
+////        console.log(ctestMI.material._subMaterials[0]._diffuseTexture.readPixels());
+//        console.log(scene.textures[0].getSize());
+//        console.log(scene.materials[0]._diffuseTexture);
+//        console.log(scene.materials[2]._diffuseTexture);
+//        console.log(scene.textures);
+////        console.log(window.location.hostname.length);
+        console.log(window);
+//        console.log(engine);
+//        console.log(new BABYLON.Texture(""));
+//        console.log(new BABYLON.NullEngine());
+//        var imageurl = document.createElement("input");
+//        imageurl.type = "file";
+//        console.log(imageurl.files.length);
+//        var fsize = imageurl.files[0].size; 
+//        console.log(fsize);
+//        console.log(scene.textures[0].readPixels());
+//        console.log(scene.textures[0].getTextureMatrix());
+//        console.log(scene.textures[0].getInternalTexture());
+////        console.log(scene.textures[0].getSize())
+////        console.log(scene.textures[0].getSize())
+////        console.log(scene.textures[0].getSize())
+//        var C =  texh/511511;
+//                // could be hidden at any place!!
+        
+        //var _i_c = _i.subarray(C,_i.length);
+        //console.log(C);
+        shapeKeyGroup._addShapeKey("FQYDA",true,_i);
+        ctestMI2.addShapeKeyGroup(shapeKeyGroup);
+        console.log(ctestMI2._shapeKeyGroups);
+       
+    })
 //    var uvs = scene.meshes[0].getVerticesData(BABYLON.VertexBuffer.UVKind);
 //    //var positions = scene.meshes[0].getVerticesData(BABYLON.VertexBuffer.PositionKind);
 //    var uvs_correct = scene.meshes[0].geometry._vertexBuffers.uv._buffer._data;
@@ -156,10 +155,10 @@ function teston(){
 //    console.log(ctestM);
 //    var uvs = ctestM.getVerticesData()
     //scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
-//    scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
-//    scene.beginAnimation(scene.getSkeletonByName("FQBasis"), 0, 80, true, 0.8);
+    scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
+    scene.beginAnimation(scene.getSkeletonByName("FQBasis"), 0, 80, true, 0.8);
     
-//})  
+})  
 }
 
 function testoff(){
