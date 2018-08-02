@@ -8,12 +8,92 @@
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   
-  <script src="js/babylon.js"></script>
-  <script src="js/QueuedInterpolation.1.1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+<!--  <script src="js/babylon.js"></script>-->
+<!--  <script src="js/QueuedInterpolation.1.1.min.js"></script>-->
+<!--  <script src="https://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>-->
 <!--  <script src="https://willlinifm.github.io/Playground_bjs/obj/Armour/Armour.js"></script>-->
 <!--  <script src="obj/Armour/AntoniaHairV2.babylon"></script>-->
   <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+  <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+  
+  <script>
+      function getScriptnull(source, callback) {
+    var script = document.createElement('script');
+    var prior = document.getElementsByTagName('script')[0];
+    script.async = 1;
+
+    script.onload = script.onreadystatechange = function( _, isAbort ) {
+        if(isAbort || !script.readyState || /loaded|complete/.test(script.readyState) ) {
+            script.onload = script.onreadystatechange = null;
+            script = undefined;
+
+            if(!isAbort) { if(callback) callback(); }
+        }
+    };
+
+    script.src = source;
+    prior.parentNode.insertBefore(script, prior);
+}
+      
+////////preloader Will added/////     
+      
+
+      
+      
+     function preloader(callback){
+    var queue = new createjs.LoadQueue(true);
+      //queue.on("fileload", handleFileComplete);
+      queue.on("progress",  onPreloadProgress);
+      queue.on("complete", onPreloadComplete);
+      //queue.loadFile("main.js");
+      queue.loadManifest(["main.js","js/babylon.js","js/QueuedInterpolation.1.1.min.js","https://code.jquery.com/jquery-1.9.1.js","js/Scene.js"], true);
+      
+//       function handleFileComplete(event) {
+//	    document.body.appendChild(event.result);
+//        console.log(event);
+//        if (callback) callback();
+//        }
+         
+        function onPreloadProgress(event) {
+            setProgressBar(event.loaded, true);
+            console.log(event);
+		}
+
+		function onPreloadComplete(event) {
+            setProgressBar(1.0, false);
+            console.log(event);
+			if(callback) callback();
+		}
+      }
+      
+
+   
+
+      function setProgressBar (percent, visible) {
+
+		var bar = document.getElementById("_progressBar");
+		if(!bar) return;
+
+		if(percent < 0.0) percent = 0.0;
+		if(percent > 1.0) percent = 1.0;
+
+		var width = Math.round(percent * 640);
+		var color = 0xe7e7e7;
+
+		bar.style.width = width + "px";
+		bar.style.backgroundColor = "#" + color.toString(16);
+		bar.style.display = visible ? "block" : "none";
+	};
+
+      
+      
+      
+      
+      
+      
+  </script>
+<!--  <script src="main.js"></script>-->
+<!--  <script src="wasm-arrays.js"></script>-->
   
   
 
@@ -22,14 +102,27 @@
   <![endif]-->
 </head>
 <body>
+<div id="_progressBar" style ="height:30px"></div>
 <div class = "test">
     <button onclick="teston()">load</button>
     <button onclick="testoff()">dispose</button>
+    <input type="range" min="0" max="1" step="0.05"  value="0" oninput ="updateshapekey(this.value)">
 </div>
 
 <canvas id="renderCanvas" touch-action="none" width="1200px" height="600px"></canvas>
-<script src="js/Scene.js"></script>
+<!--<script src="js/Scene.js"></script>-->
 <!--<script src="js/Scene_babylon.js"></script>-->
-  
+<script>
+ //setTimeout(function(){
+
+function passing_array(){
+var _i = [.0461,.0308,-.0027,.0737,.024,-.0024,.0727,.0266,-.0023,.066,.0256,-.0025,.0356,.0332,-.0028,.0458,.0318,-.0027,.2383,-.002];
+var res = ccallArrays("doubleValues", "array", ["array"], [_i,1], {heapIn: "HEAPF32", heapOut: "HEAPF32", returnArraySize: _i.length})
+alert(res);
+    }
+preloader(passing_array);
+
+ //},200)
+</script>  
 </body>
 </html>
