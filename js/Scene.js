@@ -32,7 +32,7 @@
 function updateshapekey(sa){
     var shapekeyslide = new QI.VertexDeformation("ENTIRE_MESH","BASIS",["FQYDA"],[sa],1);
         ctestMI.queueSingleEvent(shapekeyslide);
-        ctestMI2.queueSingleEvent(shapekeyslide);    
+//        ctestMI2.queueSingleEvent(shapekeyslide);    
 //    var shapekeyslide = new QI.VertexDeformation("ENTIRE_MESH","BASIS",["KEY 1"],[sa],1);
 //        ctestMI.queueSingleEvent(shapekeyslide);
         //ctestMI2.queueSingleEvent(shapekeyslide);
