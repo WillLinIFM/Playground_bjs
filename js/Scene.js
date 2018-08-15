@@ -76,8 +76,8 @@ function test_MaDecoder(){
 
 function teston(){
     
-    $.getScript("anim_avatar_min.js",function(){
-    ctest = new anim_avatar_min.MeshFactory(scene);
+    $.getScript("anim_avatar_min2.js",function(){
+    ctest = new anim_avatar_min2.MeshFactory(scene);
     ctestMI = ctest.instance("152QA_bone")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
     console.log(scene);
