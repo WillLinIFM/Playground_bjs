@@ -115,7 +115,7 @@ function teston(){
 //        console.log(C);
         shapeKeyGroup._addShapeKey("FQYDA",true,_i);
 //        shapeKeyGroup._addShapeKey("FQYDA",true,_i_c);
-        passing_array(_i);
+        //passing_array(_i);
         ctestMI.addShapeKeyGroup(shapeKeyGroup);
         console.log(ctestMI._shapeKeyGroups);
        scene.beginAnimation(scene.getSkeletonByName("152QA_bone"), 0, 80, true, 0.8);
