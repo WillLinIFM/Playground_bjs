@@ -38,7 +38,14 @@ function updateshapekey(sa){
         //ctestMI2.queueSingleEvent(shapekeyslide);
 }
     
-
+function animationtoggle(){
+    scene.beginAnimation(scene.getSkeletonByName(""), 0, 60, true, 1);
+    console.log("Start Animation");
+pause()
+restart()
+stop()
+reset()
+}
 
 function test_MaDecoder(){
         $.getScript("tag_randomvalue.js",function(){
@@ -76,15 +83,16 @@ function test_MaDecoder(){
 
 function teston(){
     
-    $.getScript("anim_avatar_min2.js",function(){
-    ctest = new anim_avatar_min2.MeshFactory(scene);
+    $.getScript("avatar_anim.js",function(){
+    ctest = new avatar_anim.MeshFactory(scene);
     ctestMI = ctest.instance("152QA_bone")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
+        ctestMI.computeBonesUsingShaders = false;
     console.log(scene);
     console.log(window);
     var shapeKeyGroup = ctestMI.getShapeKeyGroup("ENTIRE_MESH");
      if(shapeKeyGroup) ctestMI.removeShapeKeyGroup("ENTIRE_MESH");
-    $.getScript("anim_avatar_min_FQYDA.js",function(){
+    $.getScript("avatar_anim_FQYDA.js",function(){
         
 //        var texh = (scene.textures[scene.textures.length-1]._texture.baseHeight) * (scene.textures[scene.textures.length-1]._texture.baseWidth);
 ////        console.log(ctestMI.material._subMaterials[0]._diffuseTexture.readPixels());
@@ -139,17 +147,18 @@ function teston(){
 })   
 
 
-$.getScript("cloth_anim_min2.js",function(){
-    ctest2 = new cloth_anim_min2.MeshFactory(scene);
+$.getScript("cloth_anim.js",function(){
+    ctest2 = new cloth_anim.MeshFactory(scene);
     //decode
     
     ctestMI2 = ctest2.instance("FQBasis")
     ctestMI2.position = new BABYLON.Vector3(0,50,20);
+          ctestMI2.computeBonesUsingShaders = false;
     console.log(scene);
     scene.beginAnimation(scene.getSkeletonByName("FQBasis"), 0, 80, true, 0.8);
     var shapeKeyGroup = ctestMI2.getShapeKeyGroup("ENTIRE_MESH");
      if(shapeKeyGroup) ctestMI2.removeShapeKeyGroup("ENTIRE_MESH");
-    $.getScript("cloth_anim_min2_FQYD.js",function(){
+    $.getScript("cloth_anim_FQYD.js",function(){
         
 //        var texh = (scene.textures[scene.textures.length-1]._texture.baseHeight) * (scene.textures[scene.textures.length-1]._texture.baseWidth);
 ////        console.log(ctestMI.material._subMaterials[0]._diffuseTexture.readPixels());
