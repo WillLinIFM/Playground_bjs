@@ -87,7 +87,7 @@ function teston(){
     ctest = new anim_avatar_min2.MeshFactory(scene);
     ctestMI = ctest.instance("152QA_bone")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
-        ctestMI.computeBonesUsingShaders = false;
+       // ctestMI.computeBonesUsingShaders = false;
     console.log(scene);
     console.log(window);
     var shapeKeyGroup = ctestMI.getShapeKeyGroup("ENTIRE_MESH");
