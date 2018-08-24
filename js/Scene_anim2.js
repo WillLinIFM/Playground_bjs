@@ -9,7 +9,7 @@
         camera.setPosition(new BABYLON.Vector3(0 , 180, -250));    
         // This attaches the camera to the canvas
         camera.attachControl(canvas, false);
-        camera.lowerRadiusLimit = camera.upperRadiusLimit = camera.radius;
+        //camera.lowerRadiusLimit = camera.upperRadiusLimit = camera.radius;
         var light1_front = new BABYLON.HemisphericLight("Omni1", new BABYLON.Vector3(0, 1, -1), scene);
         scene.beforeCameraRender = function () {
         light1_front.intensity = 1.6;        
@@ -83,22 +83,22 @@ function test_MaDecoder(){
 
 function teston(){
     
-    $.getScript("anim_bF_avatar2.js",function(){
-    ctest = new anim_bF_avatar2.MeshFactory(scene);
-    ctestMI = ctest.instance("anim_pose_ca")
+    $.getScript("anim_bF_avatar_min.js",function(){
+    ctest = new anim_bF_avatar_min.MeshFactory(scene);
+    ctestMI = ctest.instance("anim_pose2")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
        // ctestMI.computeBonesUsingShaders = false;
     console.log(scene);
     console.log(window);
-    $.getScript("anim_bF_clo2.js",function(){
-    ctest = new anim_bF_clo2.MeshFactory(scene);
-    ctestMI = ctest.instance("anim_pose_clo1_sle_ca.001")
+    $.getScript("anim_bF_clo_min.js",function(){
+    ctest = new anim_bF_clo_min.MeshFactory(scene);
+    ctestMI = ctest.instance("anim_pose2_clo.001")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
        // ctestMI.computeBonesUsingShaders = false;
     console.log(scene);
     console.log(window);
-    scene.beginAnimation(scene.getSkeletonByName("anim_pose_ca"), 0, 80, true, 1);
-    scene.beginAnimation(scene.getSkeletonByName("anim_pose_clo1_sle_ca.001"), 0, 80, true, 1);
+    scene.beginAnimation(scene.getSkeletonByName("anim_pose2"), 40, 120, true, 0.8);
+    scene.beginAnimation(scene.getSkeletonByName("anim_pose2_clo.001"), 40, 120, true, 0.8);
   })   
 })   
     
