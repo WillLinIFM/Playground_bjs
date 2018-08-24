@@ -83,22 +83,22 @@ function test_MaDecoder(){
 
 function teston(){
     
-    $.getScript("anim_bF_avatar.js",function(){
-    ctest = new anim_bF_avatar.MeshFactory(scene);
-    ctestMI = ctest.instance("anim_pose2")
+    $.getScript("anim_bF_avatar2.js",function(){
+    ctest = new anim_bF_avatar2.MeshFactory(scene);
+    ctestMI = ctest.instance("anim_pose_ca")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
        // ctestMI.computeBonesUsingShaders = false;
     console.log(scene);
     console.log(window);
-    $.getScript("anim_bF_clo.js",function(){
-    ctest = new anim_bF_clo.MeshFactory(scene);
-    ctestMI = ctest.instance("anim_pose2_clo.001")
+    $.getScript("anim_bF_clo2.js",function(){
+    ctest = new anim_bF_clo2.MeshFactory(scene);
+    ctestMI = ctest.instance("anim_pose_clo1_sle_ca.001")
     ctestMI.position = new BABYLON.Vector3(0,50,20);
        // ctestMI.computeBonesUsingShaders = false;
     console.log(scene);
     console.log(window);
-    scene.beginAnimation(scene.getSkeletonByName("anim_pose2"), 40, 80, true, 1);
-    scene.beginAnimation(scene.getSkeletonByName("anim_pose2_clo.001"), 40, 80, true, 1);
+    scene.beginAnimation(scene.getSkeletonByName("anim_pose_ca"), 0, 80, true, 1);
+    scene.beginAnimation(scene.getSkeletonByName("anim_pose_clo1_sle_ca.001"), 0, 80, true, 1);
   })   
 })   
     
